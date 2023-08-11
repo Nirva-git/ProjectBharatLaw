@@ -1,0 +1,30 @@
+/* welcome.component.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: rgb(10,0,77);
+}
+h1,h5{
+  color: white;
+}
+.button-wrapper {
+  margin-top: 40px;
+}
+
+.button-wrapper button {
+  background-color: green;
+  color: white;
+  padding: 10px 70px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+button-wrapper:hover{
+  color: rgb(10,0,77);
+  border: 1px solid white;
+}

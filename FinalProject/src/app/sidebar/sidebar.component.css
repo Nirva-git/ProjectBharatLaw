@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.sidebar{
+    width: 20%;
+    height: 100%;
+    background-color: rgb(31, 24, 75);
+}
+.area{
+    display: flex;
+    justify-content: center;
+
+}
+.Newsearch{
+    width: 90%;
+    height:  50px;
+    margin: 5%;
+    border:1px solid rgb(241,241,241);
+    border-radius: 9px;
+    background-color: rgb(31, 24, 75);
+    color: rgb(241,241,241);
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.plus-icon{
+    font-size: xx-large;
+    margin-right: 1px;
+    padding: 20px;
+}

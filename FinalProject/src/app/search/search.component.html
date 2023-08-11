@@ -1,0 +1,60 @@
+<section class="wrap">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="form-box form-box-width">
+                    <form [formGroup]="queryForm" (ngSubmit)="getResultsBasedOnSearch()">
+                        <!-- Query Form Group -->
+                        <div class="form-group searchgroup" formArrayName="queries"
+                            *ngFor="let query of queries.controls; let i=index">
+                            <button type="submit" class="btn-left btn btn-light">
+                                <img src="assets/images/search.png" />
+                            </button>
+                            <input type="text" class="form-ctrl form-control" placeholder="Tell us about your query"
+                                [formControlName]="i">
+                            <button type="submit" *ngIf="queries.controls.length > 1" (click)="removeQueries(i)"
+                                [ngClass]="queries.controls.length > 1 ? 'btn-plus' : 'btn-closs'"
+                                class="btn btn-light">
+                                <img src="assets/images/close.png" />
+                            </button>
+                            <button type="submit" *ngIf="i === queries.controls.length - 1" (click)="addQueries()"
+                                class="btn-plus btn btn-light">
+                                <img src="assets/images/plus.png" />
+                            </button>
+                            <div
+                                *ngIf="queries.controls[i].invalid && (queries.controls[i].dirty || queries.controls[i].touched)">
+                                <span class="text-danger mt-2 d-block" *ngIf="queries.controls[i].hasError('required')">
+                                    Query is required!
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Advanced Filters -->
+                        <div class="Advancedfilters">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h4 data-bs-toggle="collapse" (click)="enableFilter()"
+                                        data-bs-target="#collapseAdvancedfilters">
+                                        Advanced filters <span class="fa fa-angle-down"></span>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="isResultsVisible">
+            <app-search-result></app-search-result>
+        </ng-container>
+    </div>
+</section>
+
+<!-- Loader -->
+<div class="loader-screen" *ngIf="loader">
+    <div class="loading-dots">
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+        <div class="loading-dots--dot"></div>
+    </div>
+</div>

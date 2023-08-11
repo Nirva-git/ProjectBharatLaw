@@ -1,0 +1,19 @@
+<header class="navbar">
+    <div class="title">
+        <div><img src="../../assets/bharatlaw.svg" /></div>
+    </div>
+
+</header>
+<div class="container">
+
+    <div class="uper">
+        <app-research-book></app-research-book>
+    </div>
+        <div class="research" *ngFor="let eachBook of researchBooks">
+            <app-research-book-dashbord [book] = "eachBook"></app-research-book-dashbord>
+        </div>
+    
+<!-- bharat-law.component.html -->
+<router-outlet></router-outlet>
+
+</div>
