@@ -16,6 +16,7 @@ loginUser() {
 throw new Error('Method not implemented.');
 }
   public loginForm!: FormGroup;
+  errorMessage: string= " "; // New property for storing error message
   type: string = 'password';
   isText: boolean = false;
   eyeIcon: string = 'fa-eye-slash';
@@ -55,8 +56,12 @@ user: any;
           this.toast.success({detail:"SUCCESS", summary:res.message, duration: 5000});
           this.router.navigate(['dashboard'])
         },
+        // error: (err) => {
+        //   this.toast.error({detail:"ERROR", summary:"Something when wrong!", duration: 5000});
+        //   console.log(err);
+        // },
         error: (err) => {
-          this.toast.error({detail:"ERROR", summary:"Something when wrong!", duration: 5000});
+          this.errorMessage = "Wrong username or password"; // Set error message
           console.log(err);
         },
       });

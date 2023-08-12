@@ -8,8 +8,11 @@
   height: 100vh;
   background-color: rgb(10,0,77);
 }
-h1,h5{
+h1{
   color: white;
+}
+h5{
+  color: rgb(204, 204, 204);
 }
 .button-wrapper {
   margin-top: 40px;
@@ -24,7 +27,11 @@ h1,h5{
   cursor: pointer;
 }
 
-button-wrapper:hover{
-  color: rgb(10,0,77);
+.signup{
+  background-color: rgb(10,0,77);
   border: 1px solid white;
+  color: white;
+  transition: 2ms;
+  padding: 10px 70px;
+  cursor: pointer;
 }

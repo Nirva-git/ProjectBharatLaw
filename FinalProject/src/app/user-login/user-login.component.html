@@ -8,13 +8,16 @@
         <input type="password" placeholder="Password"  formControlName="password">
         <small *ngIf="loginForm.controls['password'].dirty  && loginForm.hasError('required', 'password')" style="color: red;">*Password is required</small>
         <p>Forgot Password ? <a (click)="navigateToResetPassword()">Reset Password</a></p>
+        <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+        </div>
         <button (click)="onSubmit()" type="submit">Log in</button>
         <p>Don't have an account ? <span><a (click)="navigateToRegistration()">Sign up</a></span></p>
         <p>OR</p>
         <div class="google">
-            <img class="logo" src="../../../assets/google.png" alt="">
+            <img class="logo" src="../../assets/googleLogo.png" alt="">
 
-            <p>Continue with google</p>
+            <span>Continue with google</span>
         </div>
     </form>
 </div>

@@ -9,7 +9,7 @@
             <small *ngIf="signUpForm.controls['lastName'].dirty  && signUpForm.hasError('required', 'lastName')" style="color: red;">*Last name is required</small>
             <input type="text" placeholder="User Name" formControlName="userName">
           <small *ngIf="signUpForm.controls['userName'].dirty  && signUpForm.hasError('required', 'userName')" style="color: red;">*Username is required</small>
-          <input type="text" placeholder="Organization" formControlName="organization">
+         
           <input type="number" placeholder="Contact Details" formControlName="contactdetails">
           <small *ngIf="signUpForm.controls['contactdetails'].dirty  && signUpForm.hasError('required', 'contactdetails')" style="color: red;">*contactdetails is required</small>
           <input type="email" placeholder="Email address" formControlName="email">

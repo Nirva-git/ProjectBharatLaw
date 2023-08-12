@@ -54,7 +54,7 @@ export class UserRegistrationComponent implements OnInit {
         next:(res=>{
           console.log(res.message);
           this.signUpForm.reset();
-          this.router.navigate(['login']);
+          this.router.navigate(['user-login']);
           alert(res.message)
         }),
         error:(err=>{
