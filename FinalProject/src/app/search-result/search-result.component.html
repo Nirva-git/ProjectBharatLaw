@@ -8,7 +8,7 @@
                             <div class="law-card-header">
                                 <h4>{{item2.key}}</h4>
                             </div>
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-12 col-sm-6 col-md-6">
                                     <div class="card">
                                         <div class="card-body">
@@ -57,10 +57,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+                            <!-- ... (other parts of the template) ... -->
+
                             <div class="card">
                                 <div class="card-body">
-                                    <h3>Relevancy</h3>
+                                    <!-- <h3>Relevancy</h3> -->
                                     <ul class="list-point list-unstyled mb-0" *ngIf="item2.value['facts']">
                                         <li *ngFor="let facts of item2.value['facts'] | keyvalue:returnZero">
                                             {{facts.value}}</li>
@@ -68,11 +70,16 @@
                                     <p class="mb-0 mt-2" *ngIf="item2.value['facts'] == ''">Not Available</p>
                                 </div>
                             </div>
-                            <div class="card">
+
+<!-- ... (other parts of the template) ... -->
+
+
+                            
+                            <!-- <div class="card">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <!-- Sections -->
+                                           
                                             <h3>Section</h3>
                                             <ul class="list-point list-unstyled mb-0" *ngIf="item2.value['sections']">
                                                 <li
@@ -82,7 +89,7 @@
                                             <p class="mb-0 mt-2" *ngIf="item2.value['sections'] == ''">Not Available</p>
                                         </div>
                                         <div class="col-md-6">
-                                            <!-- Acts -->
+                                           
                                             <h3>Acts</h3>
                                             <ul class="list-point list-unstyled mb-0" *ngIf="item2.value['acts']">
                                                 <li *ngFor="let acts of item2.value['acts'] | keyvalue:returnZero">
@@ -93,7 +100,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <!-- Citation -->
+                                            
                                             <h3>Citation</h3>
                                             <ul class="list-point list-unstyled mb-0" *ngIf="item2.value['citations']">
                                                 <li
@@ -104,7 +111,7 @@
                                             </p>
                                         </div>
                                         <div class="col-md-6">
-                                            <!-- Bench -->
+                                           
                                             <h3>Bench</h3>
                                             <ul class="list-point list-unstyled mb-0"
                                                 *ngIf="item2.value['judgement_info']['bench']">
@@ -119,7 +126,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <!-- Case Number -->
+                                            
                                             <h3>Case Number</h3>
                                             <ul class="list-point list-unstyled mb-0"
                                                 *ngIf="item2.value['judgement_info']['case_number']">
@@ -205,14 +212,14 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </ng-container>
                     </div>
                 </ng-container>
             </ng-container>
         </div>
         <div class="col-sm-12 col-md-4 col-lg-3">
-            <ng-container *ngFor="let stat of stats | keyvalue:returnZero">
+            <!-- <ng-container *ngFor="let stat of stats | keyvalue:returnZero">
                 <ng-container *ngIf="stat.value">
                     <div class="law-rgtbar" *ngFor="let list of stat.value | keyvalue:returnZero">
                         <h4>ENTERED FACT</h4>
@@ -221,8 +228,8 @@
                         </ul>
                     </div>
                 </ng-container>
-            </ng-container>
-            <div class="law-rgtbar">
+            </ng-container> -->
+            <div class="law-rgtbar relevantjudjement">
                 <h4>Relevant Judgement</h4>
                 <ul class="list-group policy-cate list-group-numbered">
                     <ng-container *ngFor="let judgment of common_judgements | keyvalue:returnZero">
@@ -234,13 +241,13 @@
                 </ul>
                 <p class="output-tag" *ngIf="!common_judgements || common_judgements.length === 0">Not Available</p>
             </div>
-            <div class="law-rgtbar">
+            <!-- <div class="law-rgtbar">
                 <h4>Statistics</h4>
                 <ul class="list-point list-unstyled mb-0">
                     <li>Win 60%</li>
                     <li>Loss 20%</li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </div>
 </ng-container>

@@ -24,6 +24,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { LoginComponent } from './user-login/user-login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserOnNavComponent } from './user-on-nav/user-on-nav.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     SidebarComponent,
     SearchComponent,
     SearchResultComponent,
-    BharatLawComponent
+    BharatLawComponent,
+    UserOnNavComponent
   ],
   imports: [
     BrowserModule,

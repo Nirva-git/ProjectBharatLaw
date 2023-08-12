@@ -51,12 +51,15 @@ namespace BharatLaw.Controllers
             user.RefreshTokenExpiryTime = DateTime.Now.AddDays(5);
             await _authContext.SaveChangesAsync();
 
-            return Ok(new TokenApiDto()
+            return Ok(new
             {
                 AccessToken = newAccessToken,
-                RefreshToken = newRefreshToken
+                RefreshToken = newRefreshToken,
+                UserId = user.Id,
+                Username = user.Username
             });
         }
+
 
         [HttpPost("register")]
         public async Task<IActionResult> AddUser([FromBody] User userObj)
@@ -172,6 +175,21 @@ namespace BharatLaw.Controllers
         {
             return Ok(await _authContext.Users.ToListAsync());
         }
+
+        [HttpGet("GetUserById/{userId}")]
+        public async Task<ActionResult<User>> GetUserById(int userId)
+        {
+            var user = await _authContext.Users.FindAsync(userId);
+
+            if (user == null)
+            {
+                return NotFound(new { Message = "User not found!" });
+            }
+
+            return Ok(user);
+        }
+
+
 
         [HttpPost("refresh")]
         public async Task<IActionResult> Refresh([FromBody] TokenApiDto tokenApiDto)

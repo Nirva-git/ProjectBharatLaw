@@ -1,4 +1,4 @@
-.no-results{
+/* .no-results{
     padding: 100px 0;
 }
 
@@ -9,4 +9,168 @@
     .no-results h2 {
         font-size: 24px;
    }
+} */
+
+/* Bootstrap Grid and Spacing Classes */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.relevantjudjement{
+    position: relative;
+}
+
+.col-sm-12, .col-md-8, .col-lg-9,
+.col-md-4, .col-lg-3 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    
+    background-color: rgb(226, 226, 226);
+}
+
+/* List Styles */
+.list-point {
+    padding-left: 1rem;
+    list-style-type: none;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Accordion Styles */
+.accordion {
+    overflow-anchor: none;
+}
+
+.accordion-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button:focus {
+    z-index: 2;
+}
+
+.accordion-header {
+    margin-bottom: 0;
+    border-radius: 0.25rem;
+}
+
+.accordion-item {
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+.accordion-item:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.accordion-collapse {
+    height: 0;
+    transition: height 0.15s ease;
+    overflow: auto;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+/* Additional Custom Styles */
+.law-card {
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.law-card-header {
+    padding: 10px;
+    background-color:  rgb(10,0,77);
+    color: white;
+    /* border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px); */
+   
+}
+
+.law-rgtbar {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(10,0,77);
+    border: none;
+    border-radius: 0.25rem;
+}
+
+/* Result Not Available Styles */
+.no-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    color: #ccc;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .col-md-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+
+    .col-md-4, .col-lg-3 {
+        flex-basis: 33.333%;
+        max-width: 33.333%;
+    }
+
+    .accordion-button {
+        font-size: 0.875rem;
+    }
 }

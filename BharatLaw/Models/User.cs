@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace BharatLaw.Models
 {
@@ -18,6 +19,8 @@ namespace BharatLaw.Models
         public string? RefreshToken { get; set; }
         public DateTime RefreshTokenExpiryTime { get; set; }
 
-        public ICollection<ResearchBook> ResearchBooks { get; set; }
+        [JsonIgnore]
+
+        public virtual ICollection<ResearchBook> ResearchBooks { get; set;}
     }
 }

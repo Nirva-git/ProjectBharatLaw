@@ -30,19 +30,20 @@ namespace BharatLaw
             return await _context.ResearchBooks.ToListAsync();
         }
 
-        // GET: api/ResearchBooks/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ResearchBook>> GetResearchBook(int id)
+        // GET: api/ResearchBooks/UserId
+        [HttpGet("GetResearchBooksByUserId/{userId}")]
+        public async Task<ActionResult<IEnumerable<ResearchBook>>> GetResearchBooksByUserId(int userId)
         {
-            var researchBook = await _context.ResearchBooks.FindAsync(id);
+            var researchBooks = await _context.ResearchBooks.Where(rb => rb.UserId == userId).ToListAsync();
 
-            if (researchBook == null)
+            if (researchBooks == null || researchBooks.Count == 0)
             {
                 return NotFound();
             }
 
-            return researchBook;
+            return researchBooks;
         }
+
 
         // PUT: api/ResearchBooks/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
@@ -87,10 +88,19 @@ namespace BharatLaw
                 return NotFound(new { Message = "User not found!" });
             }
 
-            // Use the service to create the research book
-            _researchBookService.CreateResearchBook(user, researchBook);
+            researchBook.UserId = user.Id;
+            await _context.AddAsync(researchBook);
+            await _context.SaveChangesAsync();
+            return Ok(new
+            {
+                Status = 200,
+                Message = "New ResearchBook Added!"
+            });
 
-            return CreatedAtAction("GetResearchBook", new { id = researchBook.id }, researchBook);
+            // Use the service to create the research book
+            //_researchBookService.CreateResearchBook(user, researchBook);
+
+            //return CreatedAtAction("GetResearchBook", new { id = researchBook.id }, researchBook);
         }
 
 

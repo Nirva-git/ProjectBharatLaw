@@ -3,44 +3,45 @@
         <div class="row  justify-content-center">
             <div class="col-sm-12 col-md-8 col-lg-8">
                 <div class="form-box form-box-width">
-                    <div class="login-img">
-                        <img src="../../assets/bharatlaw.svg" />
-                    </div>
-                    <form [formGroup]="queryForm" (ngSubmit)="getResultsBasedOnSearch()">
-                        <div class="form-group searchgroup" formArrayName="queries"
-                            *ngFor="let query of queries.controls; let i=index; let last = last">
-                            <div class="searchinput">
-                            <input type="text" class="form-ctrl form-control" placeholder="Tell us about your query"
-                                [formControlName]="i">
-                                <!-- (ngModelChange)="getDefaultMetadataList()" -->
-                            <button type="submit" *ngIf="queries.controls.length > 1" (click)="removeQueries(i)"
-                                 [ngClass]="queries.controls.length > 1?'btn-plus':'btn-closs'"
-                                class="btn btn-light"></button>
-                            <button type="submit" 
-                                class="btn-plus btn btn-light searchbutton"><img  class="searchlogo" src="../../assets/searchLogo.png" /></button>
-                            </div>
-                            <div
-                                *ngIf="queries.controls[i].invalid && (queries.controls[i].dirty || queries.controls[i].touched)">
-                                <span class="text-danger mt-2 d-block" *ngIf="queries.controls[i].hasError('required')">
-                                    Query is required!
-                                </span>
-                            </div>
+                    <div class="flexclass" [ngStyle]="{'height': isResultsVisible ? 'auto' : '100vh'}">
+                     
+                        <div class="login-img">
+                            <img src="../../assets/bharatlaw.svg" />
                         </div>
-                        <div class="Advancedfilters">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="advancedFilter">
-                                    <h4 data-bs-toggle="collapse" (click)="enableFilter()"
-                                        data-bs-target="#collapseAdvancedfilters">Advanced
-                                        filters <span class="fa fa-angle-down"></span></h4>
+                        <form [formGroup]="queryForm" (ngSubmit)="getResultsBasedOnSearch()">
+                            <div class="form-group searchgroup" formArrayName="queries"
+                                *ngFor="let query of queries.controls; let i=index; let last = last">
+                                <div class="searchinput">
+                                    <input type="text" class="form-ctrl form-control"
+                                        placeholder="Tell us about your query" [formControlName]="i">
+                                    <!-- (ngModelChange)="getDefaultMetadataList()" -->
+                                    
+                                    <img class="searchlogo" src="../../assets/searchLogo.png" />
                                 </div>
-                                <div class="btns" *ngIf="!advancedFilter">
-                                    <button type="reset" class="btn btn-link btn-submit"
-                                        (click)="resetForm()">clear</button>
-                                    <!-- <button type="submit" [disabled]="!queryForm.valid"
-                                        class="btn btn-secondary btn-submit">Submit</button> -->
+                                <div
+                                    *ngIf="queries.controls[i].invalid && (queries.controls[i].dirty || queries.controls[i].touched)">
+                                    <span class="text-danger mt-2 d-block"
+                                        *ngIf="queries.controls[i].hasError('required')">
+                                        Query is required!
+                                    </span>
                                 </div>
                             </div>
-                            <!-- <div class="collapse" id="collapseAdvancedfilters">
+                            <div class="Advancedfilters">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="advancedFilter">
+                                        <h5 data-bs-toggle="collapse" (click)="enableFilter()"
+                                            data-bs-target="#collapseAdvancedfilters">Advanced
+                                            filters <span class="fa fa-angle-down"></span></h5>
+                                            <span class="btns" *ngIf="!advancedFilter">
+                                                <button type="reset" class="clear"
+                                                    (click)="resetForm()">clear</button>
+                                                <!-- <button type="submit" [disabled]="!queryForm.valid"
+                                                class="btn btn-secondary btn-submit">Submit</button> -->
+                                            </span>
+                                    </div>
+                                    
+                                </div>
+                                <!-- <div class="collapse" id="collapseAdvancedfilters">
                                 <hr />
                                 <div class="row" formGroupName="advancedFilters">
                                     <div class="col-12 col-sm-6 col-md-6">
@@ -143,8 +144,10 @@
                                     </div>
                                 </div>
                             </div> -->
-                        </div>
-                    </form>
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

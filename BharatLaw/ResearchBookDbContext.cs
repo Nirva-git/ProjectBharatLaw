@@ -12,13 +12,13 @@ namespace BharatLaw
         public DbSet<User> Users { get; set; }
         public DbSet<ResearchBook> ResearchBooks { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<ResearchBook>()
-                .HasOne(rb => rb.User)
-                .WithMany(u => u.ResearchBooks)
-                .HasForeignKey(rb => rb.UserId);
-        }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<ResearchBook>()
+        //        .HasOne(rb => rb.User)
+        //        .WithMany(u => u.ResearchBooks)
+        //        .HasForeignKey(rb => rb.UserId);
+        //}
     }
 }
    

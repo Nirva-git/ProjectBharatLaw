@@ -19,9 +19,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path: 'newresearch', component: NewResearchComponent },
   {
-    path: 'dashboard',
+    path: 'dashboard/:userId',
     component: BharatLawComponent,
   },
+  
 ];
 
 @NgModule({

@@ -12,10 +12,10 @@ namespace BharatLaw.Services
             _context = context;
         }
 
-        public void CreateResearchBook(User user, ResearchBook researchBook)
-        {
-            user.ResearchBooks.Add(researchBook);
-            _context.SaveChanges();
-        }
+        //public void CreateResearchBook(User user, ResearchBook researchBook)
+        //{
+        //    user.ResearchBooks.Add(researchBook);
+        //    _context.SaveChanges();
+        //}
     }
 }

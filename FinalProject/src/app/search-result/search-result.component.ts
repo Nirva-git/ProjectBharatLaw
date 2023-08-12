@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AppService } from '../app.service';
 
+
 @Component({
   selector: 'app-search-result',
   templateUrl: './search-result.component.html',
@@ -17,14 +18,27 @@ export class SearchResultComponent {
   stats: any = [];
   common_judgements: any = [];
   objectKeys = Object.keys;
+  expandedFacts: { [key: string]: boolean } = {};
+  visibleFacts: { [key: string]: string[] } = {};
+  
+ 
+
 
   constructor(private service: AppService) {
     this.data = [];
     this.service.currentResults.subscribe(results => {
       this.data = results;
       this.setData();
+
+      
     });
   }
+  
+ 
+  
+
+
+  
 
   // To avoid keyvalue pairs with default sorting
   returnZero() {

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace BharatLaw.Models
 {
@@ -12,7 +13,10 @@ namespace BharatLaw.Models
         public DateTime DateCreated { get; set; }
 
         [ForeignKey("UserId")]
+        
         public int UserId { get; set; }
+
+        [JsonIgnore]
         public User User { get; set; }
     }
 }

@@ -29,6 +29,7 @@ export class SearchComponent {
   yearsList: any = [];
   queryForm!: FormGroup;
   courts: any = [{ name: 'Supreme Court of India' }, { name: 'High Court' }]
+  isResultsVisibleheight:boolean = false;
 
   constructor(private _FB: FormBuilder, private http: HttpClient, private service: AppService) {
     // get defaultMetaDataList
