@@ -1,8 +1,12 @@
-ProjectBharatLaw_Backend/bin/Debug/net7.0
+#approach 1
+ProjectBharatLaw_Backend/bin
 ProjectBharatLaw_Backend/obj
-
-bin/Debug/net7.0/
+vs
+#approach 2
+bin/
 obj/
-
-./bin/Debug/net7.0
+vs/
+#approach 3
+.vs
+./bin
 ./obj
